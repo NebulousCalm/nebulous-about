@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+  --bg: #DDF2EB;
+  --rose: #BC9CB0;
+  --green: #606D5D;
+  --gray: #88958D;
+  --pink-grey: #D3CDD7;
+  --card-bg:#040e1b;
+}
+
+body{
+  background-color: var(--bg);
+}
+
+/* --------- big text ---------- */
+.big-type {
+  margin: 30px 30px;
+  font-size: 5em;
+  line-height: 1.0625;
+  font-weight: 600; 
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  height: 110vh;
+}
+
+.texture-orange {
+  color: #e5895f;
+  background-image: url('https://apple.reverence.repl.co/aurora.jpg');
+}
+
+.masked-copy p {
+  display: inline;
+}
+
+.masked-copy h2 {
+  color: var(--green);
+  display: inline;
+  font: inherit;
+}
+
+.masked-copy {
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* --------------- down arrows ------------- */
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: var(--rose);
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+/* ------------ progress bars ------------ */
+
+.progressbars{
+  text-align: center;
+  margin: auto;
+}
+
+.earth-custom{ /* for bg effect to be the same font-size and font */
+  display: inline-block !important;
+  font-size: 80px !important;
+  margin: 0 !important;
+  height: auto !important;
+  text-decoration-line: underline;
+}
+
+.pgbrsTitle{
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.meter{
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); 
+  box-sizing: content-box;
+  height: 30px; /* Can be anything */
+  position: relative;
+  background: linear-gradient(90deg, var(--pink-grey) 0%, var(--pink-grey) 35%, var(--rose) 100%);
+  margin: 10px calc(25vw - 10px) 40px calc(25vw - 12px);
+  border-radius: 2px;
+  padding: 5px;
+  border: 1px solid var(--rose);
+  width: 50vw;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background-color: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.meter-title{
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+/* ------------ whatcanido -------------- */
+.whatcanido{
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* aurora ui */
+.wrapper {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); 
+  width: 350px;
+  height: 400px;
+  background: #fff;
+  position: relative;
+  overflow:hidden;
+  border-radius: 1.85rem;
+  margin: 100px 20vw;
+  display: flex;
+}
+
+.base {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+.one {
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  background-color: #5d589d;
+  left:-50px;
+  top:-300px;
+  z-index: 3;
+}
+
+.two {
+  width: 500px;
+  height: 800px;
+  background-color: #b3b3b3;
+  bottom:-30px;
+  left:-80px;
+}
+
+.three {
+  border-radius: 100%;
+  width: 450px;
+  height: 450px;
+  bottom:-80px;
+  right:-100px;
+  background-color: #d090b3;
+}
+
+.auroraText{
+  filter: blur(0px);
+  opacity: 1.6;
+  color: #000 !important;
+  font-size: 50px;
+}
+
+/* glassmorphism */
+.glassmorph-card {
+  border-radius: 1.85rem;
+  margin: 100px 20vw;
+  display: flex;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(94, 50, 126, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); 
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+
+/* responsive-ness */
+@media screen and (max-width: 600px) {
+  .big-type{font-size: 45px;}
+  .pgbrsTitle{font-size: 45px;}
+  .progressbars{font-size: 45px;}
+  .earth-custom{font-size: 45px !important;}
+  .meter{width: 90vw; margin: 10px calc(5vw - 10px) 40px calc(5vw - 10px)}
+}
